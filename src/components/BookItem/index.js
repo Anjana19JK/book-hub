@@ -1,4 +1,4 @@
-import {withRouter} from 'react-router-dom'
+import {Link,withRouter} from 'react-router-dom'
 import {BsFillStarFill, BsFillHeartFill} from 'react-icons/bs'
 import FavoriteContext from '../../Context/FavoriteContext'
 
@@ -24,6 +24,7 @@ const BookItem = props => {
           onToggleFavorite(bookDetails)
         }
         return (
+          <Link to={`/books/${id}`} className="bookList-item">
           <li className="book-item-list-container">
             <div className="book-item-btn">
               <button
@@ -68,6 +69,7 @@ const BookItem = props => {
               </label>
             </div>
           </li>
+          </Link>
         )
       }}
     </FavoriteContext.Consumer>
